@@ -1,5 +1,6 @@
 import React from "react";
 
+import Background from './components/background/backround'
 import Header from "./features/header/header"
 
 //import logo from './logo.svg';
@@ -8,8 +9,12 @@ import './css/App.css';
 function App() {
   return (
     <div className="App">
+      
       <Header />
-      <div className="background-container"></div>
+      <Background > 
+        <p>Hello</p>
+      </Background>
+
     </div>
   );
 }
