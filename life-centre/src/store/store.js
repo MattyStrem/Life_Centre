@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import backgroundReducer from './backgroundSlice'
+import backgroundImageReducer from './backgroundImageSlice'
 
 export default configureStore({
     reducer: combineReducers({
-        background: backgroundReducer,
+        backgroundImage: backgroundImageReducer,
     })
 })

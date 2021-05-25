@@ -1,6 +1,6 @@
 import React from "react";
 
-import Background from './components/background/backround'
+import Background from './features/backgroundImage/backroundImage'
 import Header from "./features/header/header"
 
 //import logo from './logo.svg';
@@ -10,10 +10,11 @@ function App() {
   return (
     <div className="App">
       
+      <Background /> 
       <Header />
-      <Background > 
-        <p>Hello</p>
-      </Background>
+      
+        
+      
 
     </div>
   );
