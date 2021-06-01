@@ -1,4 +1,4 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { createSlice, createSelector, createAsyncThunk } from '@reduxjs/toolkit';
 
 import unsplashApi from '../api/unsplash';
 
@@ -10,6 +10,11 @@ const initialState = {
     isLoading: false
 }
 
+export const getBackgroundImage = createAsyncThunk(
+    "backgroundImage/getImage",
+    unsplashApi.getImage
+)
+
 const backgroundImageSlice = createSlice({
     name: 'backgroundImage',
     initialState: {
@@ -17,10 +22,35 @@ const backgroundImageSlice = createSlice({
         currentImageUrlIndex: 0,
     },
     reducers: {
+        switchToNextBackgroundImage: (state) => {
+            state.currentImageUrlIndex = 
+                (state.currentImageUrlIndex + 1)
+        },
 
+        switchToPreviousBackgroundImage: ( state ) => {
+            let newIndex = state.currentImageUrlIndex - 1;
+            if ( newIndex < 0 ) {
+                newIndex = state.imageUrls.length - 1;
+            };
+
+            state.currentImageUrlIndex = newIndex;
+        },
+
+
+    },
+    extraReducers: {
+        [getBackgroundImage.fulfilled]: (state, action) => {
+            state.imageUrls = action.payload;
+            state.currentImageUrlIndex = 0;
+        }
     }
 });
 
-export const selectBackgroundImage = (state) => state.imageUrls[currentImageUrlIndex];
+export const {
+    switchToNextBackgroundImage,
+    switchToPreviousBackgroundImage,
+} = backgroundImageSlice.actions;
+
+export const selectBackgroundImage = (state) => state.backgroundImage;
 
 export default backgroundImageSlice.reducer;
