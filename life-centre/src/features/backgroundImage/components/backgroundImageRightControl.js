@@ -1,21 +1,21 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import {switchToPreviousBackgroundImage} from '../../../store/backgroundImageSlice.js';
+import {switchToNextBackgroundImage} from '../../../store/backgroundImageSlice.js';
 
-const BackgroundImageLeftControl = () => {
+const BackgroundImageRightControl = () => {
     const dispatch = useDispatch();
 
     return (
         <button
             aria-label="witch to previous wall paper"
             onClick={() => {
-                dispatch(switchToPreviousBackgroundImage());
+                dispatch(switchToNextBackgroundImage());
             }}
             >
-            {"<"}
+            {">"}
         </button>
     )
 }
 
-export default BackgroundImageLeftControl;
+export default BackgroundImageRightControl;
