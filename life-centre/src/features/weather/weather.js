@@ -16,13 +16,14 @@ const Weather = () => {
     return (
         <div className="weather">
             <div className="temperature-container">
-                <image 
+                <img 
                     src={`http://openweathermap.org/img/wn/${metadata.icon}@2x.png`}
                     alt=""
                 />
                 <div className="weather-text">
                     <p className="temperature">{temperature}°</p>
-                    <p className="weather-description">{metadata.desctiption}</p>
+                    <p className="weather-description">{metadata.description}</p>
+                    <p className="weather-location">{city}, {state}</p>
                 </div>
             </div>
         </div>

@@ -13,5 +13,5 @@
   width: 100%;
   min-height: 100%;
   transform: scale(1.5);
-  
+  filter: brightness(0.5) blur(5px);
 }
