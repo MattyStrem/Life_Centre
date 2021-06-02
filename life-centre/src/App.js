@@ -7,6 +7,8 @@ import Background from './features/backgroundImage/backroundImage'
 import BackgroundImageLeftControl from './features/backgroundImage/components/backgroundImageLeftControl';
 import BackgroundImageRightControl from './features/backgroundImage/components/backgroundImageRightControl';
 
+import Journal from './features/journal/journal'
+
 //import logo from './logo.svg';
 import './css/App.css';
 
@@ -22,6 +24,10 @@ function App() {
       <aside className="left-wallpaper-control wallpaper-control">
         <BackgroundImageLeftControl />
       </aside>
+
+      <main>
+        <Journal />
+      </main>
 
       <aside className="right-wallpaper-control wallpaper-control">
         <BackgroundImageRightControl />
