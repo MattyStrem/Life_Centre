@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 
 import Card from '../../components/card'
+import JournalEntries from "./components/journalEntries"
 
 import { enrtyAdd, journalSelector } from "../../store/journalSlice";
 
@@ -42,7 +42,7 @@ const Journal = () => {
                 </form>
             </Card>
             <Card>
-                <p>{entries[1].item}</p>
+               <JournalEntries entries={entries} />
                 
             </Card>
         </div>

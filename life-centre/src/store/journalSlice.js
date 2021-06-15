@@ -6,6 +6,7 @@ const journalSlice = createSlice({
         entries: [
             { item: "pigs", complete: false},
             { item: "dogs", complete: false},
+            { item: "cats", complete: false},
         ],
         entriesComplete: []
     },
